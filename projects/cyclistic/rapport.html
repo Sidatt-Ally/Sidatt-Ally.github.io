@@ -14,7 +14,7 @@
     gtag('config', 'G-Y2SXZRDL3L');
   </script>
 
-  <!-- Highlight.js pour la coloration syntaxique -->
+  <!-- Highlight.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
@@ -24,7 +24,6 @@
   <style>
     body { padding-top: 64px; }
 
-    /* ── Sommaire flottant ── */
     .toc {
       position: fixed; top: 80px; right: 1.5rem;
       width: 200px; background: var(--card);
@@ -36,10 +35,8 @@
     .toc a:hover { color: var(--blue); }
     @media (max-width: 1100px) { .toc { display: none; } }
 
-    /* ── Layout principal ── */
     .rapport-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 2rem 5rem; }
 
-    /* ── En-tête rapport ── */
     .rapport-header {
       background: linear-gradient(135deg, var(--accent), #0a1628);
       border-radius: var(--radius); padding: 2.5rem;
@@ -57,7 +54,6 @@
     .meta-label { color: rgba(255,255,255,0.5); display: block; }
     .meta-value { color: #fff; font-weight: 600; }
 
-    /* ── Sections ── */
     .section { margin-bottom: 3rem; }
     .section-title {
       font-size: 1.3rem; font-weight: 700; color: var(--blue);
@@ -66,7 +62,6 @@
     }
     .section-num { color: var(--muted); font-size: 0.85rem; font-weight: 400; }
 
-    /* ── KPI grid ── */
     .kpi-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 0.8rem; margin-bottom: 1.5rem;
@@ -77,7 +72,6 @@
     .kpi-val.orange { color: var(--orange); }
     .kpi-lbl { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
 
-    /* ── Methodo steps ── */
     .steps { display: flex; gap: 0; flex-wrap: wrap; margin-bottom: 1rem; }
     .step {
       flex: 1; min-width: 100px; background: var(--card);
@@ -85,13 +79,12 @@
       text-align: center; position: relative;
     }
     .step:not(:last-child)::after {
-      content: '→'; position: absolute; right: -12px; top: 50%;
+      content: '\2192'; position: absolute; right: -12px; top: 50%;
       transform: translateY(-50%); color: var(--blue); font-size: 1rem; z-index: 1;
     }
     .step-name { font-weight: 700; font-size: 0.85rem; color: var(--blue); }
     .step-desc { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
 
-    /* ── Insight box ── */
     .insight {
       background: var(--card); border-left: 4px solid var(--blue);
       border-radius: 0 var(--radius) var(--radius) 0;
@@ -104,7 +97,6 @@
     .insight.green  .insight-title { color: #34a853; }
     .insight p { font-size: 0.9rem; color: var(--muted); margin: 0; }
 
-    /* ── Figures ── */
     .fig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
     @media (max-width: 640px) { .fig-grid { grid-template-columns: 1fr; } }
     .fig-card { background: var(--card); border: 1px solid var(--border);
@@ -113,7 +105,6 @@
     .fig-cap { padding: 0.5rem 0.7rem; font-size: 0.75rem; color: var(--muted); text-align: center; }
     .fig-full { grid-column: 1 / -1; }
 
-    /* ── Reco cards ── */
     .reco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; }
     .reco-card { background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.2rem; }
@@ -121,10 +112,8 @@
     .reco-t { font-weight: 700; margin: 0.3rem 0; }
     .reco-d { font-size: 0.85rem; color: var(--muted); }
 
-    /* ── Séparateur ── */
     .sep { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
-    /* ── Code blocks ── */
     .code-section { margin-bottom: 2rem; }
     .code-header {
       display: flex; align-items: center; justify-content: space-between;
@@ -153,26 +142,23 @@
     }
     .copy-btn:hover { background: #1565c0; }
 
-    /* ── Intro annexe ── */
     .annexe-intro {
       background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.2rem; margin-bottom: 1.5rem;
     }
     .annexe-intro p { color: var(--muted); font-size: 0.9rem; margin: 0; }
 
-    /* ── Boutons bas de page ── */
     .bottom-btns { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
   <div class="nav-logo">SA</div>
   <ul class="nav-links">
-    <li><a href="index.html">← Projet</a></li>
+    <li><a href="index.html">&larr; Projet</a></li>
     <li><a href="#contexte">Contexte</a></li>
-    <li><a href="#resultats">Résultats</a></li>
+    <li><a href="#resultats">R&eacute;sultats</a></li>
     <li><a href="#recommandations">Recommandations</a></li>
     <li><a href="#annexes">Annexes</a></li>
   </ul>
@@ -182,84 +168,65 @@
   </div>
 </nav>
 
-<!-- Sommaire flottant -->
 <div class="toc">
   <div class="toc-title">Sommaire</div>
   <a href="#contexte">1. Contexte</a>
-  <a href="#methodo">2. Méthodologie</a>
+  <a href="#methodo">2. M&eacute;thodologie</a>
   <a href="#kpis">3. KPIs globaux</a>
-  <a href="#resultats">4. Résultats</a>
+  <a href="#resultats">4. R&eacute;sultats</a>
   <a href="#recommandations">5. Recommandations</a>
   <a href="#annexes">6. Annexes techniques</a>
 </div>
 
 <div class="rapport-wrap">
 
-  <!-- En-tête -->
   <div class="rapport-header">
-    <h1>Cyclistic Bike-Share — Rapport d'Analyse</h1>
-    <p class="subtitle">Comment convertir les cyclistes occasionnels en membres annuels ?</p>
+    <h1>Cyclistic Bike-Share &mdash; Rapport d&rsquo;Analyse</h1>
+    <p class="subtitle">Comment convertir les cyclistes occasionnels en membres annuels&nbsp;?</p>
     <div class="rapport-meta">
-      <div class="meta-item">
-        <span class="meta-label">Analyste</span>
-        <span class="meta-value">Sidi Mohamed ALLY</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Certification</span>
-        <span class="meta-value">Google Data Analytics</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Période</span>
-        <span class="meta-value">Janvier 2019 – Décembre 2020</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Date</span>
-        <span class="meta-value">Juin 2026</span>
-      </div>
+      <div class="meta-item"><span class="meta-label">Analyste</span><span class="meta-value">Sidi Mohamed ALLY</span></div>
+      <div class="meta-item"><span class="meta-label">Certification</span><span class="meta-value">Google Data Analytics</span></div>
+      <div class="meta-item"><span class="meta-label">P&eacute;riode</span><span class="meta-value">Janvier 2019 &ndash; D&eacute;cembre 2020</span></div>
+      <div class="meta-item"><span class="meta-label">Date</span><span class="meta-value">Juin 2026</span></div>
     </div>
   </div>
 
   <!-- 1. Contexte -->
   <div class="section" id="contexte">
-    <div class="section-title"><span class="section-num">01 —</span> Contexte business</div>
+    <div class="section-title"><span class="section-num">01 &mdash;</span> Contexte business</div>
     <p style="color:var(--muted); margin-bottom:1rem;">
-      <strong style="color:var(--text)">Cyclistic</strong> est un service de vélo en libre-service basé
-      à Chicago avec <strong style="color:var(--blue)">5 824 vélos</strong> répartis sur
-      <strong style="color:var(--blue)">692 stations</strong>. Le service propose deux types d'utilisateurs :
+      <strong style="color:var(--text)">Cyclistic</strong> est un service de v&eacute;lo en libre-service
+      bas&eacute; &agrave; Chicago avec <strong style="color:var(--blue)">5&nbsp;824 v&eacute;los</strong>
+      r&eacute;partis sur <strong style="color:var(--blue)">692 stations</strong>.
     </p>
     <div class="kpi-grid">
-      <div class="kpi">
-        <div class="kpi-val">Membres</div>
-        <div class="kpi-lbl">Abonnement annuel — plus rentables</div>
-      </div>
-      <div class="kpi">
-        <div class="kpi-val orange">Casual</div>
-        <div class="kpi-lbl">Ticket jour / trajet unique</div>
-      </div>
+      <div class="kpi"><div class="kpi-val">Membres</div><div class="kpi-lbl">Abonnement annuel &mdash; plus rentables</div></div>
+      <div class="kpi"><div class="kpi-val orange">Casual</div><div class="kpi-lbl">Ticket jour / trajet unique</div></div>
     </div>
     <div class="insight">
       <div class="insight-title">Question analytique</div>
-      <p>Comment les membres annuels et les cyclistes occasionnels utilisent-ils les vélos Cyclistic différemment ? L'objectif est d'identifier les leviers marketing pour convertir les casual en membres.</p>
+      <p>Comment les membres annuels et les cyclistes occasionnels utilisent-ils les v&eacute;los Cyclistic diff&eacute;remment&nbsp;?
+      L&rsquo;objectif est d&rsquo;identifier les leviers marketing pour convertir les casual en membres.</p>
     </div>
   </div>
 
   <hr class="sep" />
 
-  <!-- 2. Méthodologie -->
+  <!-- 2. Methodologie -->
   <div class="section" id="methodo">
-    <div class="section-title"><span class="section-num">02 —</span> Méthodologie</div>
+    <div class="section-title"><span class="section-num">02 &mdash;</span> M&eacute;thodologie</div>
     <div class="steps">
-      <div class="step"><div class="step-name">Ask</div><div class="step-desc">Définir la question</div></div>
+      <div class="step"><div class="step-name">Ask</div><div class="step-desc">D&eacute;finir la question</div></div>
       <div class="step"><div class="step-name">Prepare</div><div class="step-desc">11 CSV bruts</div></div>
       <div class="step"><div class="step-name">Process</div><div class="step-desc">Nettoyage Python + SQL</div></div>
       <div class="step"><div class="step-name">Analyze</div><div class="step-desc">Stats descriptives</div></div>
-      <div class="step"><div class="step-name">Share</div><div class="step-desc">Rapport + visualisations</div></div>
+      <div class="step"><div class="step-name">Share</div><div class="step-desc">Rapport + visuels</div></div>
       <div class="step"><div class="step-name">Act</div><div class="step-desc">3 recommandations</div></div>
     </div>
     <p style="color:var(--muted); font-size:0.88rem;">
-      <strong style="color:var(--text)">Nettoyage :</strong> suppression des trajets &lt; 1 min (maintenance) et &gt; 24h,
-      correction des types de données, harmonisation des schémas 2019/2020, ajout des colonnes calculées
-      (ride_length, day_of_week, saison). Résultat : <strong style="color:var(--blue)">3 885 439 trajets valides</strong> sur 3 906 752 bruts.
+      <strong style="color:var(--text)">Nettoyage&nbsp;:</strong> suppression des trajets &lt;&nbsp;1&nbsp;min et &gt;&nbsp;24h,
+      harmonisation des sch&eacute;mas 2019/2020. R&eacute;sultat&nbsp;:
+      <strong style="color:var(--blue)">3&nbsp;885&nbsp;439 trajets valides</strong> sur 3&nbsp;906&nbsp;752 bruts.
     </p>
   </div>
 
@@ -267,108 +234,102 @@
 
   <!-- 3. KPIs -->
   <div class="section" id="kpis">
-    <div class="section-title"><span class="section-num">03 —</span> KPIs globaux</div>
+    <div class="section-title"><span class="section-num">03 &mdash;</span> KPIs globaux</div>
     <div class="kpi-grid">
-      <div class="kpi"><div class="kpi-val">3,88M</div><div class="kpi-lbl">Trajets analysés</div></div>
-      <div class="kpi"><div class="kpi-val">59%</div><div class="kpi-lbl">Membres (2,29M)</div></div>
-      <div class="kpi"><div class="kpi-val orange">41%</div><div class="kpi-lbl">Casual (1,59M)</div></div>
-      <div class="kpi"><div class="kpi-val">15,6 min</div><div class="kpi-lbl">Durée moy. membres</div></div>
-      <div class="kpi"><div class="kpi-val orange">23,1 min</div><div class="kpi-lbl">Durée moy. casual</div></div>
+      <div class="kpi"><div class="kpi-val">3,88M</div><div class="kpi-lbl">Trajets analys&eacute;s</div></div>
+      <div class="kpi"><div class="kpi-val">59&nbsp;%</div><div class="kpi-lbl">Membres (2,29M)</div></div>
+      <div class="kpi"><div class="kpi-val orange">41&nbsp;%</div><div class="kpi-lbl">Casual (1,59M)</div></div>
+      <div class="kpi"><div class="kpi-val">15,6 min</div><div class="kpi-lbl">Dur&eacute;e moy. membres</div></div>
+      <div class="kpi"><div class="kpi-val orange">23,1 min</div><div class="kpi-lbl">Dur&eacute;e moy. casual</div></div>
       <div class="kpi"><div class="kpi-val">x1,48</div><div class="kpi-lbl">Ratio casual / membre</div></div>
     </div>
   </div>
 
   <hr class="sep" />
 
-  <!-- 4. Résultats -->
+  <!-- 4. Resultats -->
   <div class="section" id="resultats">
-    <div class="section-title"><span class="section-num">04 —</span> Résultats de l'analyse</div>
+    <div class="section-title"><span class="section-num">04 &mdash;</span> R&eacute;sultats de l&rsquo;analyse</div>
 
-    <!-- R1 -->
     <div class="insight" style="margin-bottom:0.6rem;">
-      <div class="insight-title">Résultat 1 — Volume & Durée</div>
-      <p>Les membres génèrent 59% des trajets mais roulent 1,48x moins longtemps que les casual.
-      Les casual privilégient des trajets longs et détendus (loisir), les membres des trajets courts et efficaces (domicile-travail).</p>
+      <div class="insight-title">R&eacute;sultat 1 &mdash; Volume &amp; Dur&eacute;e</div>
+      <p>Les membres g&eacute;n&egrave;rent 59&nbsp;% des trajets mais roulent 1,48x moins longtemps que les casual.
+      Les casual privil&eacute;gient des trajets longs et d&eacute;tendus (loisir), les membres des trajets courts et efficaces (domicile-travail).</p>
     </div>
     <div class="fig-grid">
       <div class="fig-card">
-        <img src="../../figures/01_rides_count.png" alt="Volume de trajets" />
-        <div class="fig-cap">Fig. 1 — Volume total de trajets par groupe</div>
+        <img src="figures/01_rides_count.png" alt="Volume de trajets" loading="lazy" />
+        <div class="fig-cap">Fig. 1 &mdash; Volume total de trajets par groupe</div>
       </div>
       <div class="fig-card">
-        <img src="../../figures/02_avg_ride_length.png" alt="Durée moyenne" />
-        <div class="fig-cap">Fig. 2 — Durée moyenne des trajets (min)</div>
+        <img src="figures/02_avg_ride_length.png" alt="Duree moyenne" loading="lazy" />
+        <div class="fig-cap">Fig. 2 &mdash; Dur&eacute;e moyenne des trajets (min)</div>
       </div>
     </div>
 
-    <!-- R2 -->
     <div class="insight orange" style="margin-bottom:0.6rem;">
-      <div class="insight-title">Résultat 2 — Comportement par jour de la semaine</div>
-      <p>Les membres ont leur pic le <strong>jeudi</strong> — profil de navetteur.
-      Les casual explosent le <strong>samedi</strong> — profil de loisir week-end.
-      La durée moyenne casual le samedi est 1,6x celle des membres.</p>
+      <div class="insight-title">R&eacute;sultat 2 &mdash; Comportement par jour de la semaine</div>
+      <p>Les membres ont leur pic le <strong>jeudi</strong> &mdash; profil de navetteur.
+      Les casual explosent le <strong>samedi</strong> &mdash; profil de loisir week-end.
+      La dur&eacute;e moyenne casual le samedi est 1,6x celle des membres.</p>
     </div>
     <div class="fig-grid">
       <div class="fig-card">
-        <img src="../../figures/03_rides_by_dow.png" alt="Trajets par jour" />
-        <div class="fig-cap">Fig. 3 — Nombre de trajets par jour de la semaine</div>
+        <img src="figures/03_rides_by_dow.png" alt="Trajets par jour" loading="lazy" />
+        <div class="fig-cap">Fig. 3 &mdash; Nombre de trajets par jour de la semaine</div>
       </div>
       <div class="fig-card">
-        <img src="../../figures/08_avg_length_by_dow.png" alt="Durée par jour" />
-        <div class="fig-cap">Fig. 4 — Durée moyenne par jour</div>
+        <img src="figures/08_avg_length_by_dow.png" alt="Duree par jour" loading="lazy" />
+        <div class="fig-cap">Fig. 4 &mdash; Dur&eacute;e moyenne par jour</div>
       </div>
     </div>
 
-    <!-- R3 -->
     <div class="insight" style="margin-bottom:0.6rem;">
-      <div class="insight-title">Résultat 3 — Saisonnalité</div>
-      <p>52% des trajets casual se concentrent en été (juin–août).
-      Les membres restent actifs toute l'année (556k trajets en hiver vs 57k pour les casual).
-      <strong>Fenêtre de conversion optimale : mai–août.</strong></p>
+      <div class="insight-title">R&eacute;sultat 3 &mdash; Saisonnalit&eacute;</div>
+      <p>52&nbsp;% des trajets casual se concentrent en &eacute;t&eacute; (juin&ndash;ao&ucirc;t).
+      Les membres restent actifs toute l&rsquo;ann&eacute;e (556k trajets en hiver vs 57k pour les casual).
+      <strong>Fen&ecirc;tre de conversion optimale&nbsp;: mai&ndash;ao&ucirc;t.</strong></p>
     </div>
     <div class="fig-grid">
       <div class="fig-card fig-full">
-        <img src="../../figures/04_rides_by_month.png" alt="Evolution mensuelle" />
-        <div class="fig-cap">Fig. 5 — Evolution mensuelle 2019–2020</div>
+        <img src="figures/04_rides_by_month.png" alt="Evolution mensuelle" loading="lazy" />
+        <div class="fig-cap">Fig. 5 &mdash; &Eacute;volution mensuelle 2019&ndash;2020</div>
       </div>
     </div>
 
-    <!-- R4 -->
     <div class="insight orange" style="margin-bottom:0.6rem;">
-      <div class="insight-title">Résultat 4 — Heure de départ</div>
-      <p>Membres : double pic à 8h et 17h (heures de rush) → navetteurs confirmés.
-      Casual : montée progressive de 6h à 15h, aucun pic rush → loisir et tourisme.</p>
+      <div class="insight-title">R&eacute;sultat 4 &mdash; Heure de d&eacute;part</div>
+      <p>Membres&nbsp;: double pic &agrave; 8h et 17h (heures de rush) &rarr; navetteurs confirm&eacute;s.
+      Casual&nbsp;: mont&eacute;e progressive de 6h &agrave; 15h, aucun pic rush &rarr; loisir et tourisme.</p>
     </div>
     <div class="fig-grid">
       <div class="fig-card fig-full">
-        <img src="../../figures/07_rides_by_hour.png" alt="Trajets par heure" />
-        <div class="fig-cap">Fig. 6 — Répartition par heure de départ</div>
+        <img src="figures/07_rides_by_hour.png" alt="Trajets par heure" loading="lazy" />
+        <div class="fig-cap">Fig. 6 &mdash; R&eacute;partition par heure de d&eacute;part</div>
       </div>
     </div>
 
-    <!-- R5 -->
     <div class="insight green" style="margin-bottom:0.6rem;">
-      <div class="insight-title">Résultat 5 — Zones géographiques (casual)</div>
-      <p>Les casual se concentrent sur les stations touristiques : Lakefront Trail,
+      <div class="insight-title">R&eacute;sultat 5 &mdash; Zones g&eacute;ographiques (casual)</div>
+      <p>Les casual se concentrent sur les stations touristiques&nbsp;: Lakefront Trail,
       Millennium Park, Navy Pier, Shedd Aquarium. Ce sont les zones cibles pour la campagne marketing.</p>
     </div>
     <div class="fig-grid">
       <div class="fig-card fig-full">
-        <img src="../../figures/06_top10_stations.png" alt="Top 10 stations" />
-        <div class="fig-cap">Fig. 7 — Top 10 stations de départ — Casual riders</div>
+        <img src="figures/06_top10_stations.png" alt="Top 10 stations" loading="lazy" />
+        <div class="fig-cap">Fig. 7 &mdash; Top 10 stations de d&eacute;part &mdash; Casual riders</div>
       </div>
     </div>
 
-    <!-- R6 -->
     <div class="insight" style="margin-bottom:0.6rem;">
-      <div class="insight-title">Résultat 6 — Types de vélos</div>
-      <p>Les casual utilisent proportionnellement plus d'electric bikes (15,2% vs 11,8% pour les membres).
+      <div class="insight-title">R&eacute;sultat 6 &mdash; Types de v&eacute;los</div>
+      <p>Les casual utilisent proportionnellement plus d&rsquo;electric bikes (15,2&nbsp;% vs 11,8&nbsp;% pour les membres).
       Les docked bikes dominent les deux groupes.</p>
     </div>
     <div class="fig-grid">
       <div class="fig-card fig-full">
-        <img src="../../figures/05_bike_types.png" alt="Types de velos" />
-        <div class="fig-cap">Fig. 8 — Types de vélos utilisés par groupe</div>
+        <img src="figures/05_bike_types.png" alt="Types de velos" loading="lazy" />
+        <div class="fig-cap">Fig. 8 &mdash; Types de v&eacute;los utilis&eacute;s par groupe</div>
       </div>
     </div>
   </div>
@@ -377,59 +338,55 @@
 
   <!-- 5. Recommandations -->
   <div class="section" id="recommandations">
-    <div class="section-title"><span class="section-num">05 —</span> Recommandations</div>
+    <div class="section-title"><span class="section-num">05 &mdash;</span> Recommandations</div>
     <div class="reco-grid">
       <div class="reco-card">
         <div class="reco-n">01</div>
         <div class="reco-t">Campagne estivale de conversion</div>
-        <div class="reco-d">Lancer en mai, cibler juin–août. Offre -20% sur l'abonnement annuel déclenchée après le 3e trajet du mois. Message : « Vous aimez Cyclistic — passez à l'illimité ».</div>
+        <div class="reco-d">Lancer en mai, cibler juin&ndash;ao&ucirc;t. Offre &minus;20&nbsp;% sur l&rsquo;abonnement annuel d&eacute;clench&eacute;e apr&egrave;s le 3e trajet du mois.</div>
       </div>
       <div class="reco-card">
         <div class="reco-n">02</div>
-        <div class="reco-t">Marketing géolocalisé week-end</div>
-        <div class="reco-d">Cibler les stations touristiques le samedi matin (Millennium Park, Navy Pier). Affiches + QR code vers page d'abonnement. Partenariat offices de tourisme de Chicago.</div>
+        <div class="reco-t">Marketing g&eacute;olocalis&eacute; week-end</div>
+        <div class="reco-d">Cibler les stations touristiques le samedi matin (Millennium Park, Navy Pier). Affiches + QR code vers page d&rsquo;abonnement.</div>
       </div>
       <div class="reco-card">
         <div class="reco-n">03</div>
         <div class="reco-t">Pass week-end vers abonnement annuel</div>
-        <div class="reco-d">Créer un pass samedi+dimanche à prix attractif. Offre de bascule vers l'annuel après 3 week-ends. Tracker la conversion et ajuster après 6 mois.</div>
+        <div class="reco-d">Cr&eacute;er un pass samedi+dimanche &agrave; prix attractif. Offre de bascule vers l&rsquo;annuel apr&egrave;s 3 week-ends.</div>
       </div>
     </div>
   </div>
 
   <hr class="sep" />
 
-  <!-- 6. Annexes techniques -->
+  <!-- 6. Annexes -->
   <div class="section" id="annexes">
-    <div class="section-title"><span class="section-num">06 —</span> Annexes techniques</div>
+    <div class="section-title"><span class="section-num">06 &mdash;</span> Annexes techniques</div>
 
     <div class="annexe-intro">
-      <p>
-        Pour les curieux — voici comment cette analyse a été réalisée techniquement.
-        Ces extraits montrent les requêtes SQL et les scripts Python utilisés pour interroger
-        les 3,88 millions de trajets et produire les résultats ci-dessus.
-        Cliquez sur chaque bloc pour l'afficher. Utilisez le bouton <strong>Copier</strong> pour réutiliser le code.
-      </p>
+      <p>Ces extraits montrent les requ&ecirc;tes SQL et les scripts Python utilis&eacute;s pour interroger
+      les 3,88 millions de trajets. Cliquez sur chaque bloc pour l&rsquo;afficher.
+      Utilisez le bouton <strong>Copier</strong> pour r&eacute;utiliser le code.</p>
     </div>
 
-    <!-- SQL -->
-    <h3 style="color:var(--text); font-size:1rem; margin-bottom:1rem;">Requêtes SQL</h3>
+    <h3 style="color:var(--text); font-size:1rem; margin-bottom:1rem;">Requ&ecirc;tes SQL</h3>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang sql-lang">SQL</span> &nbsp; <span class="code-title">Statistiques descriptives par groupe</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang sql-lang">SQL</span>&nbsp;&nbsp;<span class="code-title">Statistiques descriptives par groupe</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
         <pre><code class="language-sql">SELECT
     member_casual,
-    COUNT(*)                                                    AS total_rides,
-    ROUND(AVG(ride_length), 2)                                  AS avg_ride_length_min,
-    ROUND(PERCENTILE_CONT(0.5) WITHIN GROUP
-          (ORDER BY ride_length), 2)                            AS median_ride_length_min,
-    ROUND(MAX(ride_length), 2)                                  AS max_ride_length_min,
-    ROUND(STDDEV(ride_length), 2)                               AS std_ride_length_min
+    COUNT(*)                                        AS total_rides,
+    ROUND(AVG(ride_length), 2)                      AS avg_ride_length_min,
+    ROUND(PERCENTILE_CONT(0.5)
+          WITHIN GROUP (ORDER BY ride_length), 2)   AS median_min,
+    ROUND(MAX(ride_length), 2)                      AS max_min,
+    ROUND(STDDEV(ride_length), 2)                   AS std_min
 FROM cyclistic_clean
 GROUP BY member_casual
 ORDER BY member_casual;</code></pre>
@@ -438,8 +395,8 @@ ORDER BY member_casual;</code></pre>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang sql-lang">SQL</span> &nbsp; <span class="code-title">Trajets par jour de la semaine</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang sql-lang">SQL</span>&nbsp;&nbsp;<span class="code-title">Trajets par jour de la semaine</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
@@ -461,8 +418,8 @@ ORDER BY member_casual, day_of_week;</code></pre>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang sql-lang">SQL</span> &nbsp; <span class="code-title">Saisonnalite avec WINDOW FUNCTION</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang sql-lang">SQL</span>&nbsp;&nbsp;<span class="code-title">Saisonnalite avec WINDOW FUNCTION</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
@@ -470,7 +427,7 @@ ORDER BY member_casual, day_of_week;</code></pre>
     member_casual,
     season,
     COUNT(*)                        AS total_rides,
-    ROUND(AVG(ride_length), 2)      AS avg_ride_length_min,
+    ROUND(AVG(ride_length), 2)      AS avg_min,
     ROUND(COUNT(*) * 100.0 /
           SUM(COUNT(*)) OVER (PARTITION BY member_casual), 1)
                                     AS pct_of_user_type
@@ -486,14 +443,14 @@ ORDER BY member_casual,
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang sql-lang">SQL</span> &nbsp; <span class="code-title">Top 10 stations casual (cibles marketing)</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang sql-lang">SQL</span>&nbsp;&nbsp;<span class="code-title">Top 10 stations casual</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
         <pre><code class="language-sql">SELECT
     start_station_name,
-    COUNT(*)                        AS total_rides
+    COUNT(*)  AS total_rides
 FROM cyclistic_clean
 WHERE member_casual = 'casual'
   AND start_station_name IS NOT NULL
@@ -505,8 +462,8 @@ LIMIT 10;</code></pre>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang sql-lang">SQL</span> &nbsp; <span class="code-title">CTE + ROW_NUMBER — Jour de pointe par groupe</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang sql-lang">SQL</span>&nbsp;&nbsp;<span class="code-title">CTE + ROW_NUMBER &mdash; Jour de pointe par groupe</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
@@ -514,11 +471,11 @@ LIMIT 10;</code></pre>
     SELECT
         member_casual,
         day_of_week,
-        COUNT(*)                AS rides,
+        COUNT(*)  AS rides,
         ROW_NUMBER() OVER (
             PARTITION BY member_casual
             ORDER BY COUNT(*) DESC
-        )                       AS rnk
+        )         AS rnk
     FROM cyclistic_clean
     GROUP BY member_casual, day_of_week
 )
@@ -529,21 +486,19 @@ SELECT
         WHEN 3 THEN 'Mardi'    WHEN 4 THEN 'Mercredi'
         WHEN 5 THEN 'Jeudi'    WHEN 6 THEN 'Vendredi'
         WHEN 7 THEN 'Samedi'
-    END                         AS peak_day,
+    END           AS peak_day,
     rides
 FROM ranked_days
-WHERE rnk = 1
-ORDER BY member_casual;</code></pre>
+WHERE rnk = 1;</code></pre>
       </div>
     </div>
 
-    <!-- Python -->
     <h3 style="color:var(--text); font-size:1rem; margin:1.5rem 0 1rem;">Scripts Python</h3>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang">Python</span> &nbsp; <span class="code-title">Statistiques descriptives avec pandas</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang">Python</span>&nbsp;&nbsp;<span class="code-title">Statistiques descriptives avec pandas</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
@@ -552,14 +507,13 @@ ORDER BY member_casual;</code></pre>
 df = pd.read_csv('cyclistic_clean.csv', low_memory=False)
 
 desc = df.groupby('member_casual')['ride_length'].agg(
-    total_rides  = 'count',
-    mean_min     = 'mean',
-    median_min   = 'median',
-    max_min      = 'max',
-    std_min      = 'std'
+    total_rides = 'count',
+    mean_min    = 'mean',
+    median_min  = 'median',
+    max_min     = 'max',
+    std_min     = 'std'
 ).round(2).reset_index()
 
-# Ajouter le pourcentage du total
 desc['pct'] = (desc['total_rides'] / desc['total_rides'].sum() * 100).round(1)
 print(desc)</code></pre>
       </div>
@@ -567,8 +521,8 @@ print(desc)</code></pre>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang">Python</span> &nbsp; <span class="code-title">Analyse par jour de la semaine</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang">Python</span>&nbsp;&nbsp;<span class="code-title">Analyse par jour de la semaine</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
@@ -576,13 +530,11 @@ print(desc)</code></pre>
               5:'Jeu', 6:'Ven', 7:'Sam'}
 
 dow = df.groupby(['member_casual', 'day_of_week']).agg(
-    total_rides  = ('ride_id',     'count'),
-    avg_length   = ('ride_length', 'mean')
+    total_rides = ('ride_id',     'count'),
+    avg_length  = ('ride_length', 'mean')
 ).round(2).reset_index()
 
 dow['day_name'] = dow['day_of_week'].map(DOW_LABELS)
-
-# Pourcentage par type d'utilisateur
 dow['pct'] = dow.groupby('member_casual')['total_rides'].transform(
     lambda x: (x / x.sum() * 100).round(1)
 )</code></pre>
@@ -591,8 +543,8 @@ dow['pct'] = dow.groupby('member_casual')['total_rides'].transform(
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang">Python</span> &nbsp; <span class="code-title">Top 10 stations + visualisation matplotlib</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang">Python</span>&nbsp;&nbsp;<span class="code-title">Top 10 stations + visualisation matplotlib</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
@@ -611,36 +563,30 @@ top10 = (
 )
 
 fig, ax = plt.subplots(figsize=(10, 6))
-bars = ax.barh(top10['start_station_name'][::-1],
-               top10['total_rides'][::-1],
-               color=PALETTE['casual'], alpha=0.85)
-
-ax.set_title('Top 10 stations de depart - Casual riders',
-             fontsize=13, fontweight='bold')
+ax.barh(top10['start_station_name'][::-1],
+        top10['total_rides'][::-1],
+        color=PALETTE['casual'], alpha=0.85)
 ax.xaxis.set_major_formatter(
     mticker.FuncFormatter(lambda x, _: f'{x:,.0f}'))
 plt.tight_layout()
-plt.savefig('figures/06_top10_stations.png', dpi=150)
-plt.show()</code></pre>
+plt.savefig('figures/06_top10_stations.png', dpi=150)</code></pre>
       </div>
     </div>
 
     <div class="code-section">
       <div class="code-header" onclick="toggleCode(this)">
-        <span><span class="code-lang">Python</span> &nbsp; <span class="code-title">Connexion PostgreSQL + analyse depuis la base</span></span>
-        <span class="code-toggle">▼ Afficher</span>
+        <span><span class="code-lang">Python</span>&nbsp;&nbsp;<span class="code-title">Connexion PostgreSQL + analyse depuis la base</span></span>
+        <span class="code-toggle">&#9660; Afficher</span>
       </div>
       <div class="code-body">
         <button class="copy-btn" onclick="copyCode(this)">Copier</button>
-        <pre><code class="language-python">import psycopg2
-import pandas as pd
+        <pre><code class="language-python">import psycopg2, pandas as pd
 
 conn = psycopg2.connect(
     host='localhost', port=5432,
     dbname='cyclistic_db',
     user='postgres', password='****'
 )
-
 query = """
     SELECT member_casual, season,
            COUNT(*) AS total_rides,
@@ -651,7 +597,6 @@ query = """
     GROUP BY member_casual, season
     ORDER BY member_casual, pct DESC;
 """
-
 df = pd.read_sql(query, conn)
 conn.close()
 print(df.pivot(index='season', columns='member_casual', values='pct'))</code></pre>
@@ -660,39 +605,33 @@ print(df.pivot(index='season', columns='member_casual', values='pct'))</code></p
 
   </div>
 
-  <!-- Boutons bas de page -->
   <hr class="sep" />
   <div class="bottom-btns">
-    <a href="index.html" class="btn btn-outline">← Retour au projet</a>
-    <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share" target="_blank" class="btn btn-primary">GitHub — Code complet</a>
-    <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share/blob/main/06_report.pdf" target="_blank" class="btn btn-outline">Télécharger PDF</a>
+    <a href="index.html" class="btn btn-outline">&larr; Retour au projet</a>
+    <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share" target="_blank" class="btn btn-primary">GitHub &mdash; Code complet</a>
+    <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share/blob/main/06_report.pdf" target="_blank" class="btn btn-outline">T&eacute;l&eacute;charger PDF</a>
   </div>
 
 </div>
 
 <script src="../../assets/js/i18n.js"></script>
 <script>
-  // Initialisation highlight.js
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('pre code').forEach(el => {
-      hljs.highlightElement(el);
-    });
+    document.querySelectorAll('pre code').forEach(el => { hljs.highlightElement(el); });
   });
 
-  // Toggle code blocks
   function toggleCode(header) {
     const body   = header.nextElementSibling;
     const toggle = header.querySelector('.code-toggle');
     const isOpen = body.classList.contains('open');
     body.classList.toggle('open', !isOpen);
-    toggle.textContent = isOpen ? '▼ Afficher' : '▲ Masquer';
+    toggle.innerHTML = isOpen ? '&#9660; Afficher' : '&#9650; Masquer';
   }
 
-  // Copier le code
   function copyCode(btn) {
     const code = btn.nextElementSibling.querySelector('code');
     navigator.clipboard.writeText(code.innerText).then(() => {
-      btn.textContent = 'Copié !';
+      btn.textContent = 'Copie !';
       setTimeout(() => btn.textContent = 'Copier', 2000);
     });
   }
