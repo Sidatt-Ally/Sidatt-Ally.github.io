@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cyclistic Bike-Share Analysis — Capstone Google Data Analytics Certificate. Analyse de 3,88M trajets par Sidi Mohamed ALLY." />
+  <title>Cyclistic Bike-Share — Sidi Mohamed ALLY</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2SXZRDL3L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y2SXZRDL3L');
+  </script>
+
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .project-hero {
+      min-height: 52vh;
+      display: flex; align-items: center;
+      padding: 7rem 2rem 3rem;
+      background: radial-gradient(ellipse at 70% 40%, rgba(26,115,232,0.15) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(232,77,14,0.08) 0%, transparent 55%),
+                  var(--bg);
+    }
+    .project-hero-inner { max-width: 860px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--blue); }
+    .project-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; line-height: 1.15;
+      background: linear-gradient(135deg, #fff 30%, #5a9ff5 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 0.8rem;
+    }
+    .project-hero .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 1.4rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.8rem; }
+    .tag {
+      background: rgba(26,115,232,0.12); color: #5a9ff5;
+      padding: 0.3rem 0.8rem; border-radius: 5px; font-size: 0.82rem;
+    }
+    .action-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+    /* KPI row */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem; margin-bottom: 3rem;
+    }
+    .kpi-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem;
+      text-align: center;
+    }
+    .kpi-val { font-size: 1.8rem; font-weight: 800; color: var(--blue); }
+    .kpi-val.orange { color: var(--orange); }
+    .kpi-lbl { color: var(--muted); font-size: 0.8rem; margin-top: 0.2rem; }
+
+    /* Insight box */
+    .insight {
+      background: var(--card); border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.2rem; margin-bottom: 1.2rem;
+    }
+    .insight.orange { border-left-color: var(--orange); }
+    .insight strong { color: var(--blue); }
+    .insight.orange strong { color: var(--orange); }
+
+    /* Figures grid */
+    .figs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem; margin: 1.5rem 0;
+    }
+    .fig-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .fig-card img { width: 100%; display: block; }
+    .fig-caption {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.78rem; color: var(--muted); text-align: center;
+    }
+
+    /* Reco cards */
+    .reco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .reco-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem;
+    }
+    .reco-num {
+      font-size: 2rem; font-weight: 800; color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+    .reco-title { font-weight: 700; margin-bottom: 0.5rem; }
+    .reco-desc { color: var(--muted); font-size: 0.88rem; }
+
+    .section-sep { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-logo">SA</div>
+  <ul class="nav-links">
+    <li><a href="../../index.html#hero">Accueil</a></li>
+    <li><a href="../../index.html#projects">Projets</a></li>
+    <li><a href="../../index.html#certifications">Certifications</a></li>
+    <li><a href="../../index.html#contact">Contact</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn"        data-lang="ar" onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<!-- Hero projet -->
+<div class="project-hero">
+  <div class="project-hero-inner">
+    <a href="../../index.html#projects" class="back-link">← Retour aux projets</a>
+    <h1>Cyclistic Bike-Share Analysis</h1>
+    <p class="subtitle">
+      Google Data Analytics Certificate — Capstone Case Study 1<br/>
+      Comment convertir les cyclistes occasionnels en membres annuels ?
+    </p>
+    <div class="tag-row">
+      <span class="tag">Python</span>
+      <span class="tag">SQL</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Tableau</span>
+      <span class="tag">pandas</span>
+      <span class="tag">matplotlib</span>
+      <span class="tag">ReportLab</span>
+      <span class="tag">python-docx</span>
+    </div>
+    <div class="action-btns">
+      <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share" target="_blank" class="btn btn-primary">GitHub</a>
+      <a href="#resultats" class="btn btn-outline">Voir les résultats</a>
+    </div>
+  </div>
+</div>
+
+<!-- Contenu -->
+<div style="max-width:1100px; margin:0 auto; padding:3rem 2rem;">
+
+  <!-- KPIs -->
+  <div class="kpi-row fade-in">
+    <div class="kpi-card">
+      <div class="kpi-val">3,88M</div>
+      <div class="kpi-lbl">Trajets analysés</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">12</div>
+      <div class="kpi-lbl">Mois de données (2019–2020)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">59%</div>
+      <div class="kpi-lbl">Membres (2,29M trajets)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val orange">41%</div>
+      <div class="kpi-lbl">Casual (1,59M trajets)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val orange">23,1</div>
+      <div class="kpi-lbl">Durée moy. casual (min)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-val">15,6</div>
+      <div class="kpi-lbl">Durée moy. membre (min)</div>
+    </div>
+  </div>
+
+  <hr class="section-sep" />
+
+  <!-- Contexte -->
+  <h2 class="section-title fade-in">Contexte business</h2>
+  <div class="section-divider fade-in"></div>
+  <p class="fade-in" style="color:var(--muted); margin-bottom:1rem;">
+    <strong style="color:var(--text)">Cyclistic</strong> est un service de vélo en libre-service à Chicago
+    comptant 5 824 vélos répartis sur 692 stations. La directrice marketing
+    <strong style="color:var(--text)">Lily Moreno</strong> a identifié que la conversion
+    des cyclistes occasionnels (<span style="color:var(--orange)">casual</span>) en membres annuels
+    (<span style="color:var(--blue)">members</span>) est le levier de croissance prioritaire.
+  </p>
+  <div class="insight fade-in">
+    <strong>Question analytique :</strong> Comment les membres annuels et les cyclistes occasionnels
+    utilisent-ils les vélos Cyclistic différemment ?
+  </div>
+
+  <hr class="section-sep" />
+
+  <!-- Méthodologie -->
+  <h2 class="section-title fade-in">Méthodologie</h2>
+  <div class="section-divider fade-in"></div>
+  <div class="kpi-row fade-in" style="margin-bottom:1rem;">
+    <div class="kpi-card"><div class="kpi-val" style="font-size:1.2rem;">Ask</div><div class="kpi-lbl">Définir la question</div></div>
+    <div class="kpi-card"><div class="kpi-val" style="font-size:1.2rem;">Prepare</div><div class="kpi-lbl">11 CSV · 3,9M lignes</div></div>
+    <div class="kpi-card"><div class="kpi-val" style="font-size:1.2rem;">Process</div><div class="kpi-lbl">Python · SQL · pandas</div></div>
+    <div class="kpi-card"><div class="kpi-val" style="font-size:1.2rem;">Analyze</div><div class="kpi-lbl">Stats descriptives</div></div>
+    <div class="kpi-card"><div class="kpi-val" style="font-size:1.2rem;">Share</div><div class="kpi-lbl">DOCX · PDF · PPTX</div></div>
+    <div class="kpi-card"><div class="kpi-val" style="font-size:1.2rem;">Act</div><div class="kpi-lbl">3 recommandations</div></div>
+  </div>
+
+  <hr class="section-sep" />
+
+  <!-- Résultats -->
+  <h2 class="section-title fade-in" id="resultats">Résultats clés</h2>
+  <div class="section-divider fade-in"></div>
+
+  <div class="insight fade-in">
+    <strong>Résultat 1 — Durée :</strong> Les casual roulent <strong style="color:var(--orange)">1,48× plus longtemps</strong>
+    que les membres (23,1 min vs 15,6 min). Usage loisir vs usage domicile-travail.
+  </div>
+  <div class="insight orange fade-in">
+    <strong>Résultat 2 — Temporel :</strong> Les membres ont leur pic le <strong>jeudi</strong>,
+    les casual explosent le <strong>samedi</strong>. Deux profils comportementaux distincts.
+  </div>
+  <div class="insight fade-in">
+    <strong>Résultat 3 — Saisonnalité :</strong> 52% des trajets casual se concentrent en été (juin–août).
+    Fenêtre de conversion optimale.
+  </div>
+  <div class="insight orange fade-in">
+    <strong>Résultat 4 — Géographie :</strong> Les casual partent des zones touristiques
+    (Millennium Park, Navy Pier, Lakefront) — cibles marketing identifiées.
+  </div>
+
+  <!-- Figures -->
+  <div class="figs-grid fade-in">
+    <div class="fig-card">
+      <img src="../../assets/img/cyclistic_fig1.png"
+           onerror="this.src='../../figures/01_rides_count.png'" alt="Volume de trajets" />
+      <div class="fig-caption">Fig. 1 — Volume de trajets par groupe</div>
+    </div>
+    <div class="fig-card">
+      <img src="../../assets/img/cyclistic_fig3.png"
+           onerror="this.src='../../figures/03_rides_by_dow.png'" alt="Trajets par jour" />
+      <div class="fig-caption">Fig. 3 — Comportement par jour de la semaine</div>
+    </div>
+    <div class="fig-card">
+      <img src="../../assets/img/cyclistic_fig4.png"
+           onerror="this.src='../../figures/04_rides_by_month.png'" alt="Évolution mensuelle" />
+      <div class="fig-caption">Fig. 4 — Évolution mensuelle 2019–2020</div>
+    </div>
+    <div class="fig-card">
+      <img src="../../assets/img/cyclistic_fig7.png"
+           onerror="this.src='../../figures/07_rides_by_hour.png'" alt="Trajets par heure" />
+      <div class="fig-caption">Fig. 7 — Répartition par heure de départ</div>
+    </div>
+  </div>
+
+  <hr class="section-sep" />
+
+  <!-- Recommandations -->
+  <h2 class="section-title fade-in">Recommandations</h2>
+  <div class="section-divider fade-in"></div>
+  <div class="reco-grid fade-in">
+    <div class="reco-card">
+      <div class="reco-num">01</div>
+      <div class="reco-title">Campagne estivale de conversion</div>
+      <div class="reco-desc">
+        Lancer en mai, cibler juin–août. Offre -20% sur l'abonnement annuel
+        déclenchée après le 3e trajet du mois. Message : « Vous aimez Cyclistic — passez à l'illimité ».
+      </div>
+    </div>
+    <div class="reco-card">
+      <div class="reco-num">02</div>
+      <div class="reco-title">Marketing géolocalisé week-end</div>
+      <div class="reco-desc">
+        Cibler les stations touristiques le samedi matin (Millennium Park, Navy Pier…).
+        Affiches + QR code vers page d'abonnement. Partenariat offices de tourisme.
+      </div>
+    </div>
+    <div class="reco-card">
+      <div class="reco-num">03</div>
+      <div class="reco-title">Pass week-end → abonnement annuel</div>
+      <div class="reco-desc">
+        Créer un pass samedi+dimanche à prix attractif. Offre de bascule vers
+        l'annuel après 3 week-ends. Tracker la conversion et ajuster après 6 mois.
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep" />
+
+  <!-- Livrables -->
+  <h2 class="section-title fade-in">Livrables</h2>
+  <div class="section-divider fade-in"></div>
+  <div class="action-btns fade-in">
+    <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share" target="_blank" class="btn btn-primary">Code source GitHub</a>
+    <a href="#" class="btn btn-outline">Rapport PDF</a>
+    <a href="#" class="btn btn-outline">Tableau Public</a>
+    <a href="#" class="btn btn-outline">Kaggle</a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer style="margin-top:4rem;">
+  <p>© 2026 <span>Sidi Mohamed ALLY</span> — Tous droits réservés</p>
+</footer>
+
+<script src="../../assets/js/i18n.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

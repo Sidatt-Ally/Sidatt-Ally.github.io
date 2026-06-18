@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Sidi Mohamed ALLY — Analyste de données certifié Google. Projets d'analyse de données, SQL, Python, Tableau." />
+  <meta name="author" content="Sidi Mohamed ALLY" />
+  <title>Sidi Mohamed ALLY — Analyste de données</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2SXZRDL3L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y2SXZRDL3L');
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ── Navbar ────────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">SA</div>
+  <ul class="nav-links">
+    <li><a href="#hero"           data-i18n="nav_home">Accueil</a></li>
+    <li><a href="#skills"         data-i18n="nav_about">À propos</a></li>
+    <li><a href="#projects"       data-i18n="nav_projects">Projets</a></li>
+    <li><a href="#certifications" data-i18n="nav_certs">Certifications</a></li>
+    <li><a href="#contact"        data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn"        data-lang="ar" onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Google Data Analytics Certificate</div>
+    <h1 data-i18n="hero_title">Sidi Mohamed ALLY</h1>
+    <p class="subtitle" data-i18n="hero_sub">Analyste de données certifié Google</p>
+    <p class="tagline"  data-i18n="hero_tagline">Je transforme les données brutes en décisions stratégiques.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary" data-i18n="hero_btn1">Voir mes projets</a>
+      <a href="#" class="btn btn-outline" data-i18n="hero_btn2">Télécharger CV</a>
+    </div>
+    <div class="hero-stack">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">SQL</span>
+      <span class="stack-tag">PostgreSQL</span>
+      <span class="stack-tag">Tableau</span>
+      <span class="stack-tag">pandas</span>
+      <span class="stack-tag">matplotlib</span>
+      <span class="stack-tag">R</span>
+      <span class="stack-tag">Excel</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ────────────────────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-inner">
+    <h2 class="section-title fade-in" data-i18n="skills_title">Compétences</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">SQL / PostgreSQL</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Tableau</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🐼</div>
+        <div class="skill-name">pandas</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">📈</div>
+        <div class="skill-name">matplotlib / seaborn</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">📉</div>
+        <div class="skill-name">R / ggplot2</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">📋</div>
+        <div class="skill-name">Excel / Sheets</div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-icon">🔁</div>
+        <div class="skill-name">Git / GitHub</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ───────────────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="section-inner">
+    <h2 class="section-title fade-in" data-i18n="projects_title">Projets</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="projects-grid">
+
+      <!-- Cyclistic -->
+      <div class="project-card fade-in">
+        <div class="project-img">
+          <img src="assets/img/cyclistic_preview.png" alt="Cyclistic Bike-Share"
+               onerror="this.parentElement.innerHTML='📊'" />
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Tableau</span>
+            <span class="project-tag">PostgreSQL</span>
+          </div>
+          <div class="project-title">Cyclistic Bike-Share Analysis</div>
+          <div class="project-desc">
+            Analyse de 3,88 M de trajets pour identifier les différences comportementales
+            entre membres annuels et cyclistes occasionnels. Capstone Google DA Certificate.
+          </div>
+          <div class="project-links">
+            <a href="projects/cyclistic/index.html" class="btn btn-primary" data-i18n="project_view">Voir le projet</a>
+            <a href="https://github.com/Sidatt-Ally/cyclistic-bike-share" target="_blank" class="btn btn-outline" data-i18n="project_github">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder projet 2 -->
+      <div class="project-card fade-in" style="opacity:0.45; pointer-events:none;">
+        <div class="project-img">🔜</div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">À venir</span></div>
+          <div class="project-title">Prochain projet</div>
+          <div class="project-desc">En cours de développement…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Certifications ─────────────────────────────────────────────────────── -->
+<section id="certifications">
+  <div class="section-inner">
+    <h2 class="section-title fade-in" data-i18n="certs_title">Certifications & Badges</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="certs-grid">
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">🎓</div>
+        <div>
+          <div class="cert-name">Google Data Analytics Certificate</div>
+          <div class="cert-issuer">Google / Coursera</div>
+          <div class="cert-date">2026</div>
+        </div>
+      </div>
+
+      <div class="cert-card fade-in">
+        <div class="cert-icon">📜</div>
+        <div>
+          <div class="cert-name">Diplôme — à compléter</div>
+          <div class="cert-issuer">Établissement</div>
+          <div class="cert-date">—</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-inner">
+    <h2 class="section-title fade-in" data-i18n="contact_title">Contact</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="contact-wrap fade-in">
+      <div class="contact-info">
+        <p>Disponible pour des missions freelance, des opportunités d'emploi ou simplement pour échanger sur l'analyse de données.</p>
+        <div class="contact-links">
+          <a href="mailto:sidatt6969@gmail.com" class="contact-link">
+            <span class="contact-link-icon">✉️</span> sidatt6969@gmail.com
+          </a>
+          <a href="https://github.com/Sidatt-Ally" target="_blank" class="contact-link">
+            <span class="contact-link-icon">💻</span> github.com/Sidatt-Ally
+          </a>
+          <a href="https://linkedin.com/in/" target="_blank" class="contact-link">
+            <span class="contact-link-icon">🔗</span> LinkedIn — à compléter
+          </a>
+        </div>
+      </div>
+      <form id="contact-form">
+        <input type="text"  name="name"    required data-i18n-placeholder="contact_name"  placeholder="Nom" />
+        <input type="email" name="email"   required data-i18n-placeholder="contact_email" placeholder="Email" />
+        <textarea           name="message" required data-i18n-placeholder="contact_msg"   placeholder="Message"></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="contact_send">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <p data-i18n="footer_copy">© 2026 <span>Sidi Mohamed ALLY</span> — Tous droits réservés</p>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
