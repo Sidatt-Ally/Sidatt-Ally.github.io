@@ -1,0 +1,11 @@
+# Claude Code — config interne
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
